@@ -211,6 +211,7 @@
   position: relative;
   height: 100%;
   overflow: hidden;
+  cursor: grab;
   touch-action: pan-y;
 
   /* edge fade */
@@ -1109,7 +1110,7 @@
 <span class="tanka-speed-label" id="tankaSpeedVal">Speed ×0.5</span>
 </div>
 
-    <div class="tanka-note reveal" style="margin-top:2rem; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.2em;">
+    <div class="tanka-note" style="margin-top:2rem; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.2em;">
       <a href="https://note.com/chiba_no_note" target="_blank" rel="noopener noreferrer" style="color:var(--gray); text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px; transition:color 0.3s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--gray)'">more tanka on note →</a>
     </div>
   </section>
@@ -1604,7 +1605,7 @@
   // mouse
   viewport.addEventListener('mousedown',  e => { onDragStart(e.clientX); viewport.style.cursor = 'grabbing'; });
   window .addEventListener('mousemove',   e => onDragMove(e.clientX));
-  window .addEventListener('mouseup',     () => { onDragEnd(); viewport.style.cursor = ''; });
+  window .addEventListener('mouseup',     () => { onDragEnd(); viewport.style.cursor = 'grab'; });
 })();
 
 
