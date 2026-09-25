@@ -848,7 +848,9 @@
     transition: color 0.3s;
   }
 
-  .footer-grid a:hover { color: var(--red); }
+  @media (hover: hover) and (pointer: fine) {
+    .footer-grid a:hover { color: var(--red); }
+  }
 
   .footer-bottom {
     border-top: 1px solid rgba(244,241,234,0.15);
@@ -993,7 +995,6 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     cursor: grab;
-    border: 1px solid rgba(10, 10, 10, 0.15);
     background: var(--paper-warm);
   }
   .topics-panels::-webkit-scrollbar {
@@ -1187,6 +1188,21 @@
     margin-top: 1.8rem;
   }
 
+  .topics-book-note {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--gray);
+    margin-bottom: 0.9rem;
+  }
+
+  .topics-book-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
   .topics-book-link {
     display: inline-flex;
     align-items: center;
@@ -1203,10 +1219,12 @@
     transition: border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1), color 0.35s, transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  .topics-book-link:hover {
-    border-color: var(--red);
-    color: var(--red);
-    transform: translateY(-2px);
+  @media (hover: hover) and (pointer: fine) {
+    .topics-book-link:hover {
+      border-color: var(--red);
+      color: var(--red);
+      transform: translateY(-2px);
+    }
   }
 
   .topics-book-icon {
@@ -1220,6 +1238,16 @@
     .topics-embeds {
       grid-template-columns: 1fr;
       gap: 2rem;
+      margin: 0 -1.4rem;
+    }
+    .topics-book-links {
+      flex-direction: column;
+      align-items: center;
+    }
+    .topics-book-link {
+      width: 100%;
+      max-width: 260px;
+      justify-content: center;
     }
   }
 
@@ -1251,10 +1279,12 @@
     transition: border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1), transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), background 0.35s;
   }
 
-  .cta-badge:hover {
-    border-color: var(--red);
-    transform: translateY(-2px);
-    background: var(--paper-warm);
+  @media (hover: hover) and (pointer: fine) {
+    .cta-badge:hover {
+      border-color: var(--red);
+      transform: translateY(-2px);
+      background: var(--paper-warm);
+    }
   }
 
   .cta-badge-icon {
@@ -1290,8 +1320,10 @@
     transition: color 0.35s;
   }
 
-  .cta-badge:hover .cta-badge-sub {
-    color: var(--red);
+  @media (hover: hover) and (pointer: fine) {
+    .cta-badge:hover .cta-badge-sub {
+      color: var(--red);
+    }
   }
 
   @media (max-width: 768px) {
@@ -1393,7 +1425,7 @@
         <img src="images/topics-panel-03.jpg" alt="『定額制夫の「こづかい万歳」』第78話 コマ:短歌「淡雪に月光のさす真夜中に」" class="topics-panel">
       </div>
     </div>
-    <p class="topics-credit">出典:『定額制夫の「こづかい万歳」～月額２万千円の金欠ライフ～』第78話　作:吉本浩二（週刊モーニング／講談社）</p>
+    <p class="topics-credit">出典:『定額制夫の「こづかい万歳」～月額２万千円の金欠ライフ～』第78話　作:吉本浩二（モーニング／講談社）</p>
     <div class="topics-controls">
       <button class="topics-nav-btn" id="topicsPrev" aria-label="前のコマ">←</button>
       <div class="topics-dots" id="topicsDots">
@@ -1427,6 +1459,21 @@
         </div>
         <a href="https://comic-days.com/episode/12207421983961970573" target="_blank" rel="noopener noreferrer" class="topics-embed-label">
           <span>コミックDAYSで読む</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="topics-book">
+      <p class="topics-book-note">単行本11巻に収録・10月22日発売</p>
+      <div class="topics-book-links">
+        <a href="https://amzn.asia/d/068Jl5Nh" target="_blank" rel="noopener noreferrer" class="topics-book-link">
+          <span class="topics-book-icon">→</span><span>Amazon</span>
+        </a>
+        <a href="https://books.rakuten.co.jp/rb/18782963/" target="_blank" rel="noopener noreferrer" class="topics-book-link">
+          <span class="topics-book-icon">→</span><span>楽天ブックス</span>
+        </a>
+        <a href="https://www.yodobashi.com/product/100000009004285383/" target="_blank" rel="noopener noreferrer" class="topics-book-link">
+          <span class="topics-book-icon">→</span><span>ヨドバシ.com</span>
         </a>
       </div>
     </div>
@@ -1801,6 +1848,14 @@
           <div>
             <dt>Likes</dt>
             <dd>短歌、ボードゲーム、郷土玩具、スカジャン</dd>
+          </div>
+          <div>
+            <dt>Love</dt>
+            <dd>妻、子、猫、漫画</dd>
+          </div>
+          <div>
+            <dt>Respect</dt>
+            <dd>大槻ケンヂ、黄色い帽子のおじさん</dd>
           </div>
         </dl>
       </div>
